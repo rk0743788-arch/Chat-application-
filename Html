@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="login-section" class="section active">
+        <div class="container">
+            <h1>Welcome to Chat App</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navigation Sidebar -->
+    <nav id="sidebar" class="sidebar hidden">
+        <ul>
+            <li><a href="#" onclick="showSection('chat-section')">Chat</a></li>
+            <li><a href="#" onclick="showSection('contacts-section')">Contacts</a></li>
+            <li><a href="#" onclick="showSection('settings-section')">Settings</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Chat Section -->
+    <div id="chat-section" class="section hidden">
+        <div class="container">
+            <h2>Chat Interface</h2>
+            <div id="chat-messages" class="chat-messages"></div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Type a message..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contacts Section -->
+    <div id="contacts-section" class="section hidden">
+        <div class="container">
+            <h2>Contacts</h2>
+            <button onclick="addContact()">Add Contact</button>
+            <ul id="contacts-list"></ul>
+        </div>
+    </div>
+
+    <!-- Settings Section -->
+    <div id="settings-section" class="section hidden">
+        <div class="container">
+            <h2>Settings</h2>
+            <p>Username: <span id="profile-username"></span></p>
+            <label>Theme: 
+                <select id="theme-select" onchange="changeTheme()">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
